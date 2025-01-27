@@ -37,6 +37,7 @@ class GameBloc extends Bloc<GameEvent, GameState> {
         break;
       }
     }
+    emit(state.copyWith(count: 0));
   }
 
   Future<void> _onPause(

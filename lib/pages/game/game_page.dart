@@ -219,7 +219,7 @@ class _GamePageState extends State<GamePage> {
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12.r),
-                              color: Colors.white,
+                              color: Color(0xFF3fe8e0),
                             ),
                             child: Text(
                               "$model",
