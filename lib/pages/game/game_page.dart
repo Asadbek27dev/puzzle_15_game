@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bloc/game_bloc.dart';
+import "package:flutter_screenutil/flutter_screenutil.dart";
 
 class GamePage extends StatefulWidget {
   const GamePage({super.key});
@@ -47,19 +48,19 @@ class _GamePageState extends State<GamePage> {
               builder: (BuildContext context) {
                 return Dialog(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(16.r),
                   ),
                   child: Container(
-                    width: 320,
-                    height: 200,
-                    padding: EdgeInsets.all(16),
+                    width: 320.w,
+                    height: 200.h,
+                    padding: EdgeInsets.all(16.r),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           'Excellent!',
                           style: TextStyle(
-                              fontSize: 37,
+                              fontSize: 37.sp,
                               color: Color.fromRGBO(87, 64, 124, 1),
                               fontFamily: "Pacifico"),
                         ),
@@ -81,17 +82,17 @@ class _GamePageState extends State<GamePage> {
                             )
                           ],
                         ),
-                        SizedBox(height: 16),
+                        SizedBox(height: 16.h),
                         MaterialButton(
                           onPressed: () {
                             bloc.add(const GameEvent.newGame());
                             Navigator.of(context).pop();
                           },
                           child: Container(
-                            width: 290,
-                            height: 62,
+                            width: 290.w,
+                            height: 62.h,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.r),
                               color: Color.fromRGBO(61, 41, 99, 1),
                             ),
                             child: Center(
@@ -99,7 +100,7 @@ class _GamePageState extends State<GamePage> {
                                 "Play Again",
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 22,
+                                  fontSize: 22.sp,
                                 ),
                               ),
                             ),
@@ -118,10 +119,10 @@ class _GamePageState extends State<GamePage> {
             return Scaffold(
               appBar: AppBar(
                   title: Center(
-                child: const Text(
+                child: Text(
                   "15 Puzzle",
                   style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 40.sp,
                       fontFamily: "Pacifico",
                       color: Colors.deepPurple),
                 ),
@@ -129,7 +130,7 @@ class _GamePageState extends State<GamePage> {
               body: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    padding: EdgeInsets.symmetric(horizontal: 10.w),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -138,28 +139,28 @@ class _GamePageState extends State<GamePage> {
                             bloc.add(const GameEvent.newGame());
                           },
                           child: Container(
-                            width: 150,
-                            height: 62,
+                            width: 150.w,
+                            height: 62.h,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(8.r),
                               color: Color.fromRGBO(61, 41, 99, 1),
                             ),
                             child: Center(
-                              child: const Text(
+                              child: Text(
                                 "new game",
                                 style: TextStyle(
                                     color: Color.fromRGBO(255, 255, 255, 0.5),
-                                    fontSize: 22,
+                                    fontSize: 22.sp,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
                           ),
                         ),
                         Container(
-                          width: 192,
-                          height: 62,
+                          width: 192.w,
+                          height: 62.h,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(8.r),
                             color: Color.fromRGBO(61, 41, 99, 1),
                           ),
                           child: Row(
@@ -171,13 +172,13 @@ class _GamePageState extends State<GamePage> {
                                 children: [
                                   Text(
                                     "TIME",
-                                    style: const TextStyle(
-                                        fontSize: 12, color: Colors.white),
+                                    style: TextStyle(
+                                        fontSize: 12.sp, color: Colors.white),
                                   ),
                                   Text(
                                     "  ${state.count}s",
-                                    style: const TextStyle(
-                                        fontSize: 21,
+                                    style: TextStyle(
+                                        fontSize: 21.sp,
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -188,13 +189,13 @@ class _GamePageState extends State<GamePage> {
                                 children: [
                                   Text(
                                     "MOVES",
-                                    style: const TextStyle(
-                                        fontSize: 12, color: Colors.white),
+                                    style: TextStyle(
+                                        fontSize: 12.sp, color: Colors.white),
                                   ),
                                   Text(
                                     "  ${state.count}",
-                                    style: const TextStyle(
-                                        fontSize: 21,
+                                    style: TextStyle(
+                                        fontSize: 21.sp,
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold),
                                   ),
@@ -209,7 +210,7 @@ class _GamePageState extends State<GamePage> {
                   Expanded(
                     child: GridView.builder(
                       itemCount: state.list.length,
-                      padding: const EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10.r),
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 4,
@@ -222,7 +223,7 @@ class _GamePageState extends State<GamePage> {
                           // ignore: deprecated_member_use
                           return Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(12.r),
                               // ignore: deprecated_member_use
                               color: Colors.blue.withOpacity(0.2),
                             ),
@@ -234,19 +235,19 @@ class _GamePageState extends State<GamePage> {
                           child: Container(
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(12.r),
                               color: trueColor(model: model),
                             ),
                             child: Text(
                               "$model",
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontFamily: "Pacifico",
-                                fontSize: 45,
+                                fontSize: 45.sp,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w600,
                                 shadows: [
                                   Shadow(
-                                    blurRadius: 1.0,
+                                    blurRadius: 1.0.r,
                                     color: Colors.grey,
                                     offset: Offset(3.0, 3.0),
                                   ),
@@ -258,7 +259,7 @@ class _GamePageState extends State<GamePage> {
                       },
                     ),
                   ),
-                  const SizedBox(height: 40),
+                  SizedBox(height: 40.h),
                 ],
               ),
             );
