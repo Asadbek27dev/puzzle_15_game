@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bloc/game_bloc.dart';
@@ -20,21 +19,6 @@ class _GamePageState extends State<GamePage> {
     super.dispose();
   }
 
-  List<int> trueList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];
-
-  Color trueColor({required int model}) {
-    print(model);
-    Color color = Colors.black;
-    for (var i = 0; i < trueList.length; i++) {
-      if (model == trueList[i]) {
-        color = Colors.black;
-      } else {
-        color = Color(0xFF03fcf8);
-      }
-    }
-    return color;
-  }
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider.value(
@@ -42,7 +26,6 @@ class _GamePageState extends State<GamePage> {
       child: BlocListener<GameBloc, GameState>(
         listener: (context, state) {
           if (state.finished) {
-            print("FINISHED");
             showDialog(
               context: context,
               builder: (BuildContext context) {
@@ -236,7 +219,7 @@ class _GamePageState extends State<GamePage> {
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12.r),
-                              color: trueColor(model: model),
+                              color: Colors.white,
                             ),
                             child: Text(
                               "$model",
